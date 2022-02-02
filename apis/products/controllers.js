@@ -30,14 +30,7 @@ exports.getDetails = (req,res,next) => {
     }
 };
 
-exports.postProducts = async (req, res, next) => {
-    try {
-    const newProduct = await Product.create(req.body)
-    res.status(201).json(newProduct); 
-    } catch (error) {
-    next(error);
-    }
-};
+
 
 exports.deleteProductss = async (req, res, next) => {
     try {

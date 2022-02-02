@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const { getProducts, getDetails, postProducts, deleteProductss, updateProducts, fetchProduct } = require("./controllers")
+const { getProducts, getDetails,  deleteProductss, updateProducts, fetchProduct } = require("./controllers")
 
 router.param("productId", async (req, res, next, productId) => {
     const product = await fetchProduct(productId, next);
@@ -18,8 +18,6 @@ router.param("productId", async (req, res, next, productId) => {
 router.get("/", getProducts);
 
 router.get(`/:id`, getDetails);
-
-router.post("/", postProducts)
 
 router.delete("/:productId", deleteProductss)
 
